@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?movie);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+<div>
+  <h1>Movies list</h1>
+</div>
+
+<div>
+  <%= link_to "Add a movie", new_list_path, class: "btn btn-secondary" %>
+</div>
+
+<div>
+  <% @list.movies.each do |movie| %>
+    <div class="card-product">
+      <img src=  <%= movie.poster_url %> />
+      <div class="card-product-infos">
+        <h2><%= movie.title %></h2>
+        <p><%= movie.overview %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>

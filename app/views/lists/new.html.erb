@@ -1,0 +1,13 @@
+<h1>New list</h1>
+
+<%= form_with(model: @list, local: true, html: { class: "form" }) do |form| %>
+
+  <%= form.text_field :name, placeholder: "Name", class: "form__input", id: "name" %>
+  <%= form.label :name, "Name", class: "form__label" %>
+
+  <div class="form-group mt-4">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= form.submit "Submit", class: "btn btn-success" %>
+  </div>
+</div>
+<% end %>
