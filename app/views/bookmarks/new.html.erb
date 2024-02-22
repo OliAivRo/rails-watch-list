@@ -1,0 +1,19 @@
+<div>
+  <h1>New bookmark</h1>
+</div>
+
+
+<div>
+  <%= form_with(model: [@list, @bookmark], local: true, html: { class: "form" }) do |form| %>
+    <%= form.text_field :comment, placeholder: "Comment", class: "form__input", id: "comment"%>
+    <%= form.label :comment, "Comment", class: "form__label" %>
+
+    <%= form.label :movie_id, "Movie" %>
+    <%= form.collection_select :movie_id, Movie.all, :id, :title %>
+
+    <%= form.label :list_id, "List" %>
+    <%= form.collection_select :list_id, List.all, :id, :name %>
+
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
